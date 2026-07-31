@@ -2,7 +2,7 @@
 
 A calculator built with **HTML, CSS, and vanilla JavaScript** — no `eval()`, no libraries. Every operation is handled through explicit state tracking.
 
-🔗 **Live Demo:** [Click Here to View](https://sushildive.github.io/mycalculator)
+🔗 **Live Demo:** [Click Here to View](https://sushildive012.github.io/mycalculator/)
 
 <!--![Preview](assets/preview.png) -->
 

@@ -2,7 +2,7 @@
 
 A calculator built with **HTML, CSS, and vanilla JavaScript** — no `eval()`, no libraries. Every operation is handled through explicit state tracking.
 
-🔗 **Live Demo:** [sushildive.github.io/mycalculator](#) <!-- replace with your GitHub Pages link -->
+🔗 **Live Demo:** [Click Here to View](https://sushildive.github.io/mycalculator)
 
 <!--![Preview](assets/preview.png) -->
 
@@ -10,8 +10,8 @@ A calculator built with **HTML, CSS, and vanilla JavaScript** — no `eval()`, n
 
 ![Features](assets/banner_features.svg)
 - Full operand/operator/AC/delete/percent handling, built as separate modular functions
-- Chained operations (e.g. `5 + 3 * 2 =`) via a running-total state model
-- Backspace (`del`) that correctly unwinds both the display string and the underlying number
+- Chained operations (e.g. `5 + 3 x gives 8 x`) via a running-total state model
+- Backspace (`del`) that deletes display string as well as digit in memory
 - Percentage logic handled contextually (differs for `+ - *` vs `/` vs no active operator)
 - Button press animation (clip-path bevel "physically" depresses on click)
 - Responsive from small to large screens using `clamp()`
@@ -39,5 +39,5 @@ cd repo-name
 ├── style.css
 ├── script.js
 └── assets/
-    └── preview.png
+    └── icon.png
 ```

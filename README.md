@@ -29,7 +29,7 @@ A calculator built with **HTML, CSS, and vanilla JavaScript** — no `eval()`, n
 ![Run Locally](assets/banner_run.svg)
 ```bash
 git clone https://github.com/sushildive012/mycalculator.git
-cd repo-name
+cd mycalculator
 # open index.html in your browser
 ```
 

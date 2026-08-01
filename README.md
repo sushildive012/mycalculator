@@ -1,6 +1,8 @@
 ![Vanilla JS Calculator](assets/banner_title.svg)
 
-A calculator built with **HTML, CSS, and vanilla JavaScript** — no `eval()`. Every button routes through a modular state engine, not one giant handler.
+- A calculator built with **HTML, CSS, and vanilla JavaScript**
+- no `eval()` used
+- Every button routes through a **modular** state engine, not one giant handler.
 
 🔗 **Live Demo:** [Click Here to View](https://sushildive012.github.io/mycalculator/)
 
@@ -16,7 +18,9 @@ A calculator built with **HTML, CSS, and vanilla JavaScript** — no `eval()`. E
 - 🖱️ Chiseled 3D key press effect via `clip-path`, fully responsive with `clamp()`
 
 ![Tech Stack](assets/banner_tech.svg)
-`HTML5` · `CSS3` (`clip-path` polygon, `clamp()`) · `Vanilla JS` (state machine, event delegation, `keydown` mapping)
+- `HTML5`
+- `CSS3` (`clip-path` polygon, `clamp()`)
+- `Vanilla JS` (state machine, event delegation, `keydown` mapping)
 
 ![What I Learned](assets/banner_learned.svg)
 - **State over `eval()`** — 4 tracked variables (`runningTotal`, `currentNumber`, `currentExpression`, `activeOperator`) drive every calculation myself, no string evaluation

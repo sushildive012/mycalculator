@@ -1,6 +1,6 @@
 ![Vanilla JS Calculator](assets/banner_title.svg)
 
-A calculator built with **HTML, CSS, and vanilla JavaScript** — no `eval()`, no libraries. Every operation is handled through explicit state tracking.
+A calculator built with **HTML, CSS, and vanilla JavaScript** — no `eval()`. Every button routes through a modular state engine, not one giant handler.
 
 🔗 **Live Demo:** [Click Here to View](https://sushildive012.github.io/mycalculator/)
 
@@ -9,22 +9,21 @@ A calculator built with **HTML, CSS, and vanilla JavaScript** — no `eval()`, n
 ---
 
 ![Features](assets/banner_features.svg)
-- Full operand/operator/AC/delete/percent handling, built as separate modular functions
-- Chained operations (e.g. `5 + 3 x gives 8 x`) via a running-total state model
-- Backspace (`del`) that deletes display string as well as digit in memory
-- Percentage logic handled contextually (differs for `+ - *` vs `/` vs no active operator)
-- Button press animation (clip-path bevel "physically" depresses on click)
-- Responsive from small to large screens using `clamp()`
+- ⌨️ **Full keyboard support** — type numbers/operators directly (`Enter` = `=`, `Esc` = `AC`, `Backspace` = `del`)
+- 🧩 **Modular engine** — one function per concern: `handleOperand`, `handleOperator`, `handlePercentage`, `handleDeleteButton`
+- 🔢 Chained operations (`5 + 3 x` → `8 x`) via a running-total state model
+- 🎯 Edge cases handled by hand: blocks double decimals, kills leading zeroes, contextual `%` (differs across `+ - * /`)
+- 🖱️ Chiseled 3D key press effect via `clip-path`, fully responsive with `clamp()`
 
 ![Tech Stack](assets/banner_tech.svg)
-- `HTML5` · `CSS3` (`clip-path` polygon, `clamp()`) · `Vanilla JavaScript` (state machine, event delegation)
+`HTML5` · `CSS3` (`clip-path` polygon, `clamp()`) · `Vanilla JS` (state machine, event delegation, `keydown` mapping)
 
 ![What I Learned](assets/banner_learned.svg)
-- **State-driven logic over `eval()`** — every button press is resolved through 4 tracked variables (`runningTotal`, `currentNumber`, `currentExpression`, `activeOperator`) instead of evaluating a raw string, so I control precision, chaining, and edge cases myself
-- **Modular function design** — one function per concern (`handleOperand`, `handleOperator`, `handlePercentage`, `handleDeleteButton`, `resetAll`) instead of one giant click handler
-- **`clip-path: polygon()`** — used it to cut chiseled corners on both the calculator body and each key, plus an inset bevel layer for a 3D pressed-key look
-- **Event delegation** — one listener on `.btn-panel` handles all 20 buttons
-- **Debugging by tracing** — used `console.log` at each state transition to verify `runningTotal`/`currentNumber`/`activeOperator` before writing the display logic, instead of guessing
+- **State over `eval()`** — 4 tracked variables (`runningTotal`, `currentNumber`, `currentExpression`, `activeOperator`) drive every calculation myself, no string evaluation
+- **Edge-case-first thinking** — leading-zero strip, blocked repeat decimals, and delete syncing both the display string *and* the number in memory took more logic than the "happy path"
+- **Keyboard as a second input source** — mapped physical keys to the same `handleInput()` engine the buttons use, so one core function drives two input methods
+- **`clip-path: polygon()`** for chiseled corners + inset bevel = 3D pressed-key feel
+- **Traced state with `console.log`** at each transition instead of guessing why a value was wrong
 
 ![Run Locally](assets/banner_run.svg)
 ```bash

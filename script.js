@@ -4,6 +4,25 @@
 const display = document.querySelector(".display");
 const btnPanel = document.querySelector(".btn-panel");
 
+
+
+// For animating continously instructions for keyboard
+const keyboardInstruction = document.querySelector(".keyboard-alternatives");
+
+// Automatically toggles opacity every 2 secs
+setInterval(() =>{
+    // 1. Check if the screen is wider than a tablet (desktop view)
+    const isDesktop = window.innerWidth > 768;
+
+
+    //2. Only animate if its desktop and user not hovering
+    if(isDesktop && !keyboardInstruction.matches(':hover')){
+        keyboardInstruction.classList.toggle("fade-out");
+    }
+}, 1500)
+
+
+
 //--------4 MAIN Variables------------
 // EVERYTHING WRAPS AROUND THESE VARIABLES
 let runningTotal = 0; //Holds actual math answer, after each operation
@@ -313,6 +332,44 @@ display.addEventListener('wheel', (event) => {
     // Converted: Moving mouse wheel UP/DOWN now moves display LEFT/RIGHT
     display.scrollLeft += event.deltaY; 
 });
+
+
+
+// For direct keyboard
+// SINGLE KEYBOARD EVENT LISTENER (Added feature - leaves existing code untouched)
+window.addEventListener('keydown', (e) => {
+    let key = e.key;
+
+    // 1. Map standard keyboard keys to your HTML button values
+    if (key === "Enter") key = "=";
+    if (key === "Escape") key = "AC";
+    if (key === "Backspace") key = "delete";
+    if (key === "%") key = "percent";
+    if (key === "x" || key === "X") key = "*"; // Support typing 'x' for multiplication
+
+    // 2. Query the button panel to find the button that has this exact value attribute
+    const matchingBtn = btnPanel.querySelector(`button[value="${key}"]`);
+
+    // 3. If a matching button exists, route it straight into your main engine!
+    if (matchingBtn) {
+        // Prevent default browser actions (like page scrolling when pressing space or arrow keys)
+        e.preventDefault(); 
+        
+        // Trigger your click visual effect if you want, then process the inputs
+        handleInput(matchingBtn);
+
+        //// EXTRA: Also shows active-click effect on buttons when keyboard used
+        // matchingBtn.classList.add("btnClickedEffect");
+        // setTimeout(() => {
+        //     matchingBtn.classList.remove("btnClickedEffect");
+        // }, 80);
+    }
+});
+
+
+
+
+
 
 
 

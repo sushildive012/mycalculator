@@ -27,8 +27,44 @@ body{
     /* For calculator */
     align-items: center;
     justify-content: center;
+    position: relative;
 
 }
+
+/* INSTRUCTIONS for KEYBOARD INPUT */
+/* media query for these Instructions used for mobile devices */
+.keyboard-alternatives{
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(3%);
+    
+    min-height: 100px;
+    
+    /* border: 1px solid red; */
+    
+    display: grid;
+    
+    opacity: 1;
+    transition: opacity 0.7s ease;
+}
+.keyboard-alternatives.fade-out{
+    opacity: 0;
+}
+.keyboard-alternatives:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.keyboard-alternatives p:nth-child(1){
+    color: rgba(245, 222, 179, 0.293);
+}
+.keyboard-alternatives p{
+    color: rgba(128, 128, 128, 0.41);
+}
+.highlight{
+    color: rgba(255, 146, 73, 0.4);
+}
+
 
 .calculator{
     /* border: 1px solid rgb(0, 255, 0); */
@@ -284,5 +320,12 @@ body{
     transform: translateY(3px);
     
     border-bottom-width: 1px; /* Flattens the bottom shadow cap layout instantly */
+}
+
+/* Hide instructions completely if less than tablet screen */
+@media (max-width: 768px) {
+    .keyboard-alternatives {
+        display: none !important; /* Forces it to stay hidden entirely */
+    }
 }
 

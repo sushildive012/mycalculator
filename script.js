@@ -358,6 +358,11 @@ window.addEventListener('keydown', (e) => {
         // Trigger your click visual effect if you want, then process the inputs
         handleInput(matchingBtn);
 
+        
+        // Call this every time a user presses a number or operator
+        display.scrollLeft = display.scrollWidth;
+    
+
         // EXTRA: Also shows active-click effect on buttons when keyboard used
         matchingBtn.classList.add("btnClickedEffect");
         setTimeout(() => {
@@ -365,12 +370,6 @@ window.addEventListener('keydown', (e) => {
         }, 80);
     }
 });
-
-
-
-
-
-
 
 
 
